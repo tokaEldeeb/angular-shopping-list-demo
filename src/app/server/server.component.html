@@ -1,0 +1,14 @@
+<h3 [ngStyle] = "{backgroundColor : getColor()}" [ngClass] = "{online:disabled ===true}">{{'server'}} {{serverId}} {{statusSer}}</h3>
+<button disabled class="btn btn-primary" [disabled] = "!disabled"
+(click) = "disabled = false;"
+>click</button>
+<p *ngIf="disabled;else enabled">Disabled</p>
+<ng-template #enabled>
+<p>enabled</p>
+</ng-template>
+<input type="text" class="form-control"
+(input) = "onUpdateText($event)">
+
+<input type="text" class="form-control"
+[(ngModel)] = "dataChanged">
+<p>{{dataChanged}}</p>
