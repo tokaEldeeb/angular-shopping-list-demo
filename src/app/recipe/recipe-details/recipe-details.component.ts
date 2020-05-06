@@ -12,6 +12,7 @@ import { Route } from '@angular/compiler/src/core';
 export class RecipeDetailsComponent implements OnInit {
 selectedRecipe : Recipe;
 index:number;
+message:string;
   constructor(private recipeSer:RecipeService,private activeRoute:ActivatedRoute
     ,private route:Router) { }
 
@@ -26,9 +27,14 @@ index:number;
   }
   addToShopping(){
     this.recipeSer.addIngredientToShoppingList(this.selectedRecipe.Ingredints);
+    this.message = "Ingredient added successfully to the shopping list";
   }
   DeleteRecipe(){
     this.recipeSer.deleteRecipeById(this.index);
+    this.message = "Ingredient deleted successfully from the shopping list";
     this.route.navigate(["/recipe"]);
+  }
+  clearMessage(){
+    this.message = '';
   }
 }

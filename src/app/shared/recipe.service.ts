@@ -11,21 +11,21 @@ export class RecipeService{
     public recipeChanged = new Subject<Recipe[]>();
 
     private recipes : Recipe[] = [
-        new Recipe('cake',
-        'recipe for birthday cake',
+        new Recipe('Cake',
+        'Recipe for birthday cake',
         'https://www.handletheheat.com/wp-content/uploads/2015/03/Best-Birthday-Cake-with-milk-chocolate-buttercream-SQUARE.jpg'
         ,[
-            new Ingredient('meat',1),
-            new Ingredient('bread',1)
+            new Ingredient('Flour',1),
+            new Ingredient('Chocolate bar',1)
         ]
         ),
         
-        new Recipe('rice',
-        'rice',
+        new Recipe('Rice',
+        'This recipe to prepare a dish of rice',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0FsKNLAgm_L7jzra7M1mhtP9M-RfbcTf2cNy5aMusYP9f2w-pUg&s'
         ,[
-            new Ingredient('onion',2),
-            new Ingredient('rice',1)
+            new Ingredient('Salt',2),
+            new Ingredient('Rice',1)
         ]
         ),
       

@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col-xs-12">
+<div class="col-xs-12">
+    <div class="row">
         <form (ngSubmit)="onAddClick(f)" #f="ngForm">
            <!-- <div class="row">
                 <div class="col-xs-7 form-group">
@@ -13,11 +13,11 @@
             </div>-->
 
             <div class="row">
-                <div class="col-xs-7 form-group">
+                <div class="col-md-5 form-group">
                     <label for="Name" >Name</label>
                     <input type="text" class="form-control" name="name" #ingName ngModel required>
                 </div>
-                <div class="col-xs-5 form-group">
+                <div class="col-md-5 form-group">
                     <label for="Amount">Amount</label>
                     <input type="number" class="form-control" name="amount" #ingAmount ngModel required>
                 </div>
@@ -26,9 +26,9 @@
 
 <div class="row">
     <div class="col-md-12">
-        <button type="submit" class="btn btn-success" [disabled]="!f.valid" >{{editFlag==true?'Update':'Add'}}</button>
-        <button class="btn btn-danger" type="button" [disabled]="!editFlag" (click)="DeleteItem()">Delete</button>
-        <button class="btn btn-primary" type="button" (click)='clearItem()'>Clear</button>
+        <button type="submit" class="btn btn-success" [disabled]="!f.valid" style="margin:3px;">{{editFlag==true?'Update':'Add'}}</button>
+        <button class="btn btn-danger" type="button" [disabled]="!editFlag" (click)="DeleteItem()" style="margin:3px;">Delete</button>
+        <button class="btn btn-primary" type="button" (click)='clearItem()' style="margin:3px;">Clear</button>
     </div>
 </div>
 </form>

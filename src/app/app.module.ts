@@ -18,6 +18,7 @@ import {ShoppingService} from './shared/Shopping.service';
 import { AppRoutingModule } from './app-routing-module';
 import { RecipeStartupComponent } from './recipe/recipe-startup/recipe-startup.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [ShoppingService,RecipeService],
   bootstrap: [AppComponent]

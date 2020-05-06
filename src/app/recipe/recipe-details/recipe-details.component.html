@@ -1,5 +1,8 @@
 <div class="row">
     <div class="col-md-12">
+      <div *ngIf="message != '' && message != null" class="message-container alert-success">
+        <p style="margin-right:5px;flex:2 0 0">{{message}} </p>
+        <button class="btn" style="padding:0;height:0;color:green;flex:0.1 0 0" (click)="clearMessage()"> x </button></div>
         <img class="img-responsive" src="{{selectedRecipe.imagePath}}" style="width: 50px;">
     </div>
 </div>
@@ -11,16 +14,14 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="btn-group" appDropdown>
-            <button class="btn btn-primary dropdown-toggle">
-                Manage Recipe <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a (click)="addToShopping()" style="cursor: pointer;">Add ingredient</a></li>
-                <li><a [routerLink]="['edit']">Edit ingredient</a></li>
-                <li><a style="cursor: pointer;" (click)='DeleteRecipe()'>Delete ingredient</a></li>
-            </ul>
+      <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+        <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Manage Recipe</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual">
+              <a (click)="addToShopping()" class="manage-items">Add ingredient</a>
+              <a [routerLink]="['edit']" class="manage-items">Edit ingredient</a>
+              <a class="manage-items" (click)='DeleteRecipe()'>Delete ingredient</a>
         </div>
+      </div>
     </div> 
 </div>
 

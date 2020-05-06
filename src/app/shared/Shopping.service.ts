@@ -6,8 +6,8 @@ export class ShoppingService{
    public EditIngredient = new Subject<number>();
    
     ingredients:Ingredient[]=[
-            new Ingredient('tomatoes',10),
-            new Ingredient('pepper',3)
+            new Ingredient('Tomatoes',10),
+            new Ingredient('Pepper',3)
     ];
 
     getIngredients(){
@@ -15,7 +15,14 @@ export class ShoppingService{
     }
     
     AddIngredient(ingredientDetails :Ingredient){
-        this.ingredients.push(new Ingredient(ingredientDetails.name,ingredientDetails.amount));
+        let ingredient = this.ingredients.filter(x => x.name == ingredientDetails.name)[0];
+        if(ingredient){
+          ingredient.amount += ingredientDetails.amount;
+        }
+        else{
+            this.ingredients.push(new Ingredient(ingredientDetails.name,ingredientDetails.amount));
+        }
+        
         this.ingredientAdded.next(this.ingredients.slice());
     }
 
@@ -28,10 +35,9 @@ export class ShoppingService{
         this.ingredientAdded.next(this.ingredients.slice());
     }
     AddIngredients(ingredientDetails :Ingredient[]){
-        // ingredientDetails.forEach(element => {
-        //     this.ingredients.push(new Ingredient(element.name,element.amount));
-
-        // });
-        this.ingredients.push(...ingredientDetails);
+         ingredientDetails.forEach(element => {
+            this.AddIngredient(element);
+         });
+       
     }
 }

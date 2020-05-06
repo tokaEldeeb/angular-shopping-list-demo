@@ -1,0 +1,16 @@
+.manage-items{
+  width:100%;
+  float : left;
+  cursor: pointer;
+  color: #0459b5;
+}
+.manage-items:hover{
+  text-decoration: none;
+  color: grey;
+}
+.message-container{
+  margin-bottom: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
